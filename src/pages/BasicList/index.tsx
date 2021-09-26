@@ -37,10 +37,10 @@ const Index = () => {
     const afterTableLayout = () => {
         return (
             <Row>
-                <Col xs={24} sm={12}>
+                <Col xs={24} sm={6}>
                     ...
                 </Col>
-                <Col xs={24} sm={12} className={styles.tableToolbar}>
+                <Col xs={24} sm={18} className={styles.tableToolbar}>
                     <Pagination
                         total={init.data?.meta.total || 0}
                         current={init.data?.meta.page || 1}
@@ -59,7 +59,8 @@ const Index = () => {
 
     useEffect(() => {
         init.run();
-    }, [init, page, per_page]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [page, per_page]);
 
     return (
         <PageContainer>
